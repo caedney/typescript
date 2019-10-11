@@ -1,0 +1,28 @@
+.graph {
+  position: relative;
+  margin: auto;
+  height: 20vh;
+  width: 20vw;
+
+  > div {
+    float: left;
+    color: white;
+
+    &:nth-child(1) {
+      background: red;
+    }
+    
+    &:nth-child(2) {
+      background: green;
+    }
+    
+    &:nth-child(3) {
+      background: blue;
+    }
+    
+    &:nth-child(4) {
+      background: grey;
+    }
+  }
+}
+
