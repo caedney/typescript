@@ -4,16 +4,22 @@ import withDimensions, { WithDimensionsProps } from '../../util/hocs/withDimensi
 import styles from './Graph.module.scss';
 
 type GraphProps = {
-  // can also use `interface`
-  initialCount?: number,
+  onClick?: () => void,
 } & WithDimensionsProps;
 
 const Graph: FunctionComponent<GraphProps> = ({
+  onClick,
   forwardRef,
   width,
   height
 }) => {
 
+  const handleOnClick = () => {
+    if (onClick){
+      onClick();
+    }
+  }
+  
   console.log(forwardRef, width, height);
 
   const style = {
@@ -22,7 +28,11 @@ const Graph: FunctionComponent<GraphProps> = ({
   }
 
   return (
-    <div className={styles.graph} ref={forwardRef}>
+    <div
+      ref={forwardRef}
+      className={styles.graph}
+      onClick={handleOnClick}
+    >
       <div style={style}>Graph 1</div>
       <div style={style}>Graph 2</div>
       <div style={style}>Graph 3</div>
