@@ -4,13 +4,13 @@ import React, {
   useRef,
   useState,
   useLayoutEffect,
-  useEffect,
+  useEffect
 } from 'react';
 import { Diff } from 'utility-types';
 
-export interface WithDimensionsProps {
-  width: number;
-  height: number;
+export type WithDimensionsProps = {
+  width: number,
+  height: number,
   forwardRef: RefObject<HTMLDivElement>
 }
 
