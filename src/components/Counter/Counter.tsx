@@ -1,10 +1,11 @@
 import React, { FunctionComponent, useState } from 'react';
 
+import Button from '../Button/Button';
+
 import styles from './Counter.module.scss';
 
 type CounterProps = {
-  // can also use `interface`
-  initialCount?: number,
+  initialCount?: number
 };
 
 const Counter: FunctionComponent<CounterProps> = ({ initialCount = 0 }) => {
@@ -15,9 +16,9 @@ const Counter: FunctionComponent<CounterProps> = ({ initialCount = 0 }) => {
 
   return (
     <div className={styles.counter}>
-      <button onClick={decrement}>-</button>
+      <Button onClick={decrement}>-</Button>
       <span>{count}</span>
-      <button onClick={increment}>+</button>
+      <Button onClick={increment}>+</Button>
     </div>
   );
 }
