@@ -47,7 +47,7 @@ function withDimensions<T extends WithDimensionsProps>(
       return () => {
         window.removeEventListener('resize', updateDimensions);
       }
-    }, [])
+    })
 
     return (
       <WrappedComponent
