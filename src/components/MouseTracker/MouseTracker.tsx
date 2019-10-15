@@ -9,7 +9,7 @@ const MouseTracker: FunctionComponent = () => {
 
   return (
     <div className={styles['mouse-tracker']}>
-      <h1>Move the mouse around!</h1>
+      <h2>Move the mouse around!</h2>
       <Mouse>
         {mouse => (
           <Cat mouse={mouse} />
