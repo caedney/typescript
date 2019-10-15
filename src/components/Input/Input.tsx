@@ -1,10 +1,10 @@
-import React, { FunctionComponent, FormEvent } from 'react';
+import React, { FunctionComponent, SyntheticEvent } from 'react';
 
 import styles from './Input.module.scss';
 
 const Input: FunctionComponent = () => {
 
-  const handleOnChange = (e: FormEvent<HTMLInputElement>) => {
+  const handleOnChange = (e: SyntheticEvent<HTMLInputElement>) => {
     console.log('Input', e.currentTarget.value);
   }
 
