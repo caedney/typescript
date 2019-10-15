@@ -10,7 +10,7 @@ import styles from './App.module.scss';
 
 const App: FunctionComponent = () => {
   return (
-    <div className={`${styles.app} app`}>
+    <div className={styles.app}>
       <header className={styles["app-header"]}>
         <img src={logo} className={styles["app-logo"]} alt="logo" />
       </header>
