@@ -1,0 +1,47 @@
+/* 
+  This should correlate with 'src/util/breakpoints' for 'react-media'.
+  https://stackoverflow.com/questions/16704243/widths-to-use-in-media-queries 
+*/
+
+$grid-breakpoints: (
+  // smartphones, iPhone, portrait 480x320 phones
+  xxxs: 0,
+  // portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide
+  xxs: 480px,
+  // portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones
+  xs: 640px,
+  // tablet, landscape iPad, lo-res laptops ands desktops
+  sm: 960px,
+  // big landscape tablets, laptops, and desktops
+  md: 1024px,
+  // hi-res laptops and desktops 
+  lg: 1280px,
+  xl: 1440px,
+  xxl: 1680px,
+  xxxl: 1920px
+);
+
+@mixin breakpoint-min($name, $breakpoints: $grid-breakpoints){
+  $min: map-get($breakpoints, $name);
+
+  @media (min-width: $min + 1px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-between($minimum, $maximum, $breakpoints: $grid-breakpoints){
+  $min: map-get($breakpoints, $minimum);
+  $max: map-get($breakpoints, $maximum);
+
+  @media (min-width: $min + 1px) and (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin breakpoint-max($name, $breakpoints: $grid-breakpoints){
+  $max: map-get($breakpoints, $name);
+
+  @media (max-width: $max) {
+    @content;
+  }
+}

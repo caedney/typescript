@@ -1,0 +1,55 @@
+// Colors
+
+$white: #ffffff;
+
+$brand-dark-blue: #00205b;
+$brand-blue: #346094;
+$brand-orange: #e70;
+$brand-light-orange: #ffaa61;
+$brand-grey: #eee;
+$brand-warmer-grey: #e0e0e0;
+$brand-warm-grey: #a0a0a0;
+$brand-shade-grey: #f4f4f4;
+$brand-light-grey: #f9f9f9;
+$brand-silver: #ccc;
+$brand-table-header-grey: #f7f7f7;
+$brand-red: #bc2916;
+$brand-yellow: #ebc111;
+$brand-green: #51bc9f;
+
+// $brand-hover-blue: rgba(52, 96, 148, 1);
+
+$text-color: #333;
+$placeholder-text-color: $brand-warm-grey;
+
+// Boostrap Overrides
+$grid-columns: 16;
+$grid-gutter-width: 20px;
+
+// Style Vars
+
+$icon-nav-width: 72px;
+$popout-nav-width: 800px;
+$popout-nav-width-offset: 224px;
+$nav-border-width: 2px;
+
+//datepicker defaults
+$datepicker__background-color: #f0f0f0 !default;
+$datepicker__border-color: #aeaeae !default;
+$datepicker__highlighted-color: #3dcc4a !default;
+$datepicker__muted-color: #ccc !default;
+$datepicker__selected-color: #216ba5 !default;
+$datepicker__text-color: #000 !default;
+$datepicker__header-color: #000 !default;
+$datepicker__navigation-disabled-color: lighten($datepicker__muted-color, 10%) !default;
+
+$datepicker__border-radius: 0.3rem !default;
+$datepicker__day-margin: 0.166rem !default;
+$datepicker__font-size: 0.8rem !default;
+$datepicker__font-family: 'Helvetica Neue', Helvetica, Arial,
+  sans-serif !default;
+$datepicker__item-size: 1.7rem !default;
+$datepicker__margin: 0.4rem !default;
+$datepicker__navigation-size: 0.45rem !default;
+$datepicker__triangle-size: 8px !default;
+

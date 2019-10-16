@@ -1,0 +1,53 @@
+@import 'src/style/vars';
+
+.expansion-panel {
+  max-width: 480px;
+  margin: 0 auto 24px;
+
+  > .title {
+    border-radius: 4px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.4s ease;
+    line-height: 16px;
+
+    h2 {
+      font-weight: bold;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    &.grey {
+      background: $brand-light-grey;
+      color: $brand-blue;
+
+      &.active {
+        background: $brand-grey;
+      }
+    }
+
+    &.blue {
+      background: $brand-blue;
+      color: white;
+
+      &.active {
+        background: $brand-dark-blue;
+      }
+    }
+  }
+
+  > .panel {
+    transition-property: height;
+    transition-timing-function: ease;
+    overflow: hidden;
+  }
+
+  .panel-inner {
+    padding: 8px;
+  }
+}
