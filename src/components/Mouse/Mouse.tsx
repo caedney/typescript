@@ -2,7 +2,12 @@
 //                            Imported NPM modules                            //
 //----------------------------------------------------------------------------//
 
-import React, { FunctionComponent, useState, MouseEvent, ReactNode } from 'react';
+import React, {
+  FunctionComponent,
+  useState,
+  MouseEvent,
+  ReactNode,
+} from 'react';
 
 //----------------------------------------------------------------------------//
 //                        Imported app modules/assets                         //
@@ -15,18 +20,18 @@ import styles from './Mouse.module.scss';
 //----------------------------------------------------------------------------//
 
 type MouseProps = {
-  children: (state: MouseState) => ReactNode,
-}
+  children: (state: MouseState) => ReactNode;
+};
 
 export type MouseState = {
-  x: number,
-  y: number
-}
+  x: number;
+  y: number;
+};
 
-const Mouse: FunctionComponent<MouseProps> = ( props ) => {
+const Mouse: FunctionComponent<MouseProps> = props => {
   const [mouse, setMouse] = useState({
     x: 0,
-    y: 0
+    y: 0,
   });
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
@@ -34,22 +39,25 @@ const Mouse: FunctionComponent<MouseProps> = ( props ) => {
     const height = e.currentTarget.clientHeight;
     const offsetLeft = e.pageX - e.currentTarget.offsetLeft;
     const offsetTop = e.pageY - e.currentTarget.offsetTop;
-    const mouseOver = offsetTop <= height && offsetTop >= 0 &&
-      offsetLeft <= width && offsetLeft >= 0;
+    const mouseOver =
+      offsetTop <= height &&
+      offsetTop >= 0 &&
+      offsetLeft <= width &&
+      offsetLeft >= 0;
 
-    if (mouseOver){
+    if (mouseOver) {
       setMouse({
         x: offsetLeft,
-        y: offsetTop
+        y: offsetTop,
       });
     }
-  }
+  };
 
   return (
     <div className={styles.mouse} onMouseMove={handleMouseMove}>
       {props.children(mouse)}
     </div>
   );
-}
+};
 
 export default Mouse;
