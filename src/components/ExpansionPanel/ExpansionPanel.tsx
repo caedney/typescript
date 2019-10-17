@@ -2,7 +2,13 @@
 //                            Imported NPM modules                            //
 //----------------------------------------------------------------------------//
 
-import React, { FunctionComponent, useRef, ReactNode, useState } from 'react';
+import React, {
+  FunctionComponent,
+  useRef,
+  useState,
+  ReactNode,
+  ReactElement,
+} from 'react';
 
 //----------------------------------------------------------------------------//
 //                        Imported app modules/assets                         //
@@ -17,17 +23,17 @@ import styles from './ExpansionPanel.module.scss';
 //----------------------------------------------------------------------------//
 
 type ExpansionPanelProps = {
-  children: Element | ReactNode,
-  title: string,
-  variant?: "grey" | "blue",
-  duration?: number
-}
+  children: ReactNode | ReactElement;
+  title: string;
+  variant?: 'grey' | 'blue';
+  duration?: number;
+};
 
 const ExpansionPanel: FunctionComponent<ExpansionPanelProps> = ({
   children,
   title,
   variant = 'grey',
-  duration = 400
+  duration = 400,
 }) => {
   const panelRef = useRef<HTMLDivElement>(null);
   const [expanded, setExpanded] = useState<boolean>(false);
@@ -38,14 +44,14 @@ const ExpansionPanel: FunctionComponent<ExpansionPanelProps> = ({
     setExpanded(true);
     setEntering(true);
     setPanelHeight(node.scrollHeight);
-   
+
     setTimeout(() => {
       setEntering(false);
       setPanelHeight('auto');
     }, duration);
   };
 
-  const handleExit = (node: HTMLDivElement)=> {
+  const handleExit = (node: HTMLDivElement) => {
     requestAnimationFrame(() => {
       node.style.height = `${node.scrollHeight}px`;
 
@@ -80,19 +86,16 @@ const ExpansionPanel: FunctionComponent<ExpansionPanelProps> = ({
   });
 
   return (
-    <div className={styles["expansion-panel"]}>
-      <div
-        className={classNames}
-        onClick={handleTransition}
-        role="presentation"
-      >
+    <div className={styles['expansion-panel']}>
+      <div className={classNames} onClick={handleTransition}>
         <h2>{title}</h2>
+        {expanded ? '-' : '+'}
       </div>
       <div className={styles.panel} style={panelStyles} ref={panelRef}>
-        <div className={styles["panel-inner"]}>{children}</div>
+        <div className={styles['panel-inner']}>{children}</div>
       </div>
     </div>
   );
-}
+};
 
 export default ExpansionPanel;
