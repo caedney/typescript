@@ -1,5 +1,15 @@
 @import 'src/style/vars';
 
+@mixin toggle-button() {
+  height: 12px;
+  width: 2px;
+  position: absolute;
+  content: '';
+  background: $brand-blue;
+  right: 16px;
+  border-radius: 1px;
+}
+
 .expansion-panel {
   max-width: 480px;
   margin: 0 auto 24px;
@@ -7,19 +17,34 @@
   > .title {
     border-radius: 4px;
     text-transform: uppercase;
+    text-align: left;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 16px;
+    padding: 8px 32px 8px 16px;
     font-weight: bold;
     cursor: pointer;
     transition: background 0.4s ease;
     line-height: 16px;
+    position: relative;
 
     h2 {
       font-weight: bold;
       font-size: 14px;
       margin: 0;
+    }
+
+    &::before {
+      @include toggle-button();
+      transform: rotate(90deg);
+    }
+
+    &::after {
+      @include toggle-button();
+    }
+
+    &.active::after {
+      display: none;
     }
 
     &.grey {

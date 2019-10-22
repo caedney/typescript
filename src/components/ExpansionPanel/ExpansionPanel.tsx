@@ -89,7 +89,6 @@ const ExpansionPanel: FunctionComponent<ExpansionPanelProps> = ({
     <div className={styles['expansion-panel']}>
       <div className={classNames} onClick={handleTransition}>
         <h2>{title}</h2>
-        {expanded ? '-' : '+'}
       </div>
       <div className={styles.panel} style={panelStyles} ref={panelRef}>
         <div className={styles['panel-inner']}>{children}</div>
