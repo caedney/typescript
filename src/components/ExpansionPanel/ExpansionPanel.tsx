@@ -2,13 +2,7 @@
 //                            Imported NPM modules                            //
 //----------------------------------------------------------------------------//
 
-import React, {
-  FunctionComponent,
-  useRef,
-  useState,
-  ReactNode,
-  ReactElement,
-} from 'react';
+import React, { FunctionComponent, useRef, useState, ReactNode } from 'react';
 
 //----------------------------------------------------------------------------//
 //                        Imported app modules/assets                         //
@@ -23,7 +17,7 @@ import styles from './ExpansionPanel.module.scss';
 //----------------------------------------------------------------------------//
 
 type ExpansionPanelProps = {
-  children: ReactNode | ReactElement;
+  children: ReactNode;
   title: string;
   variant?: 'grey' | 'blue';
   duration?: number;
