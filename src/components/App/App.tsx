@@ -42,6 +42,13 @@ const App: FunctionComponent = () => {
             dignissimos explicabo quis amet error iste porro velit a distinctio
             placeat fugit! Amet tenetur cupiditate ipsum.
           </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
+            repellendus adipisci aspernatur molestias fuga, nobis aliquid
+            molestiae perferendis aut assumenda blanditiis neque dolor delectus
+            dignissimos explicabo quis amet error iste porro velit a distinctio
+            placeat fugit! Amet tenetur cupiditate ipsum.
+          </p>
         </ExpansionPanel>
         <Counter initialCount={8} />
         <Graph
