@@ -50,18 +50,15 @@
     &.grey {
       background: $brand-light-grey;
       color: $brand-blue;
-
-      &.active {
-        background: $brand-grey;
-      }
     }
 
     &.blue {
       background: $brand-blue;
       color: white;
 
-      &.active {
-        background: $brand-dark-blue;
+      &::before,
+      &::after {
+        background: #fff;
       }
     }
   }

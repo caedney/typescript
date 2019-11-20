@@ -34,7 +34,7 @@ const App: FunctionComponent = () => {
       <div className={styles['app']}>
         <Header />
         <Search />
-        <ExpansionPanel title={'Expansion Panel'}>
+        <ExpansionPanel title={'Expansion Panel'} variant={'blue'}>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
             repellendus adipisci aspernatur molestias fuga, nobis aliquid
