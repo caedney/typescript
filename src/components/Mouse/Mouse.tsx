@@ -54,7 +54,7 @@ const Mouse: FunctionComponent<MouseProps> = props => {
   };
 
   return (
-    <div className={styles.mouse} onMouseMove={handleMouseMove}>
+    <div className={styles['mouse']} onMouseMove={handleMouseMove}>
       {props.children(mouse)}
     </div>
   );

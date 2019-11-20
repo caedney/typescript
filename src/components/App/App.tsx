@@ -31,7 +31,7 @@ const App: FunctionComponent = () => {
         theme: 'light',
       }}
     >
-      <div className={styles.app}>
+      <div className={styles['app']}>
         <Header />
         <Search />
         <ExpansionPanel title={'Expansion Panel'}>

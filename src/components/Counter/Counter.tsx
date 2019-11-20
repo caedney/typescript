@@ -5,7 +5,7 @@ import Button from '../Button/Button';
 import styles from './Counter.module.scss';
 
 type CounterProps = {
-  initialCount?: number
+  initialCount?: number;
 };
 
 const Counter: FunctionComponent<CounterProps> = ({ initialCount = 0 }) => {
@@ -15,12 +15,12 @@ const Counter: FunctionComponent<CounterProps> = ({ initialCount = 0 }) => {
   const decrement = () => setCount(count - 1);
 
   return (
-    <div className={styles.counter}>
+    <div className={styles['counter']}>
       <Button onClick={decrement}>-</Button>
       <span>{count}</span>
       <Button onClick={increment}>+</Button>
     </div>
   );
-}
+};
 
 export default Counter;

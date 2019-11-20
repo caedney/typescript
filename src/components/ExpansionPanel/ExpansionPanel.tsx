@@ -74,9 +74,9 @@ const ExpansionPanel: FunctionComponent<ExpansionPanelProps> = ({
   };
 
   const classNames = getClassNames({
-    [styles.title]: true,
+    [styles['title']]: true,
     [styles[variant]]: true,
-    [styles.active]: expanded,
+    [styles['active']]: expanded,
   });
 
   return (
