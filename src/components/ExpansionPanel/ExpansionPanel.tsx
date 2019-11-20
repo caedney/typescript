@@ -59,7 +59,7 @@ const ExpansionPanel: FunctionComponent<ExpansionPanelProps> = ({
   const handleTransition = () => {
     const node = panelRef.current;
 
-    if (node && entering === false) {
+    if (node && !entering) {
       if (expanded) {
         handleExit(node);
       } else {
@@ -84,7 +84,7 @@ const ExpansionPanel: FunctionComponent<ExpansionPanelProps> = ({
       <div className={classNames} onClick={handleTransition}>
         <h2>{title}</h2>
       </div>
-      <div className={styles.panel} style={panelStyles} ref={panelRef}>
+      <div className={styles['panel']} style={panelStyles} ref={panelRef}>
         <div className={styles['panel-inner']}>{children}</div>
       </div>
     </div>
