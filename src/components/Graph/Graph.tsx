@@ -5,31 +5,21 @@ import withDimensions, {
 
 import styles from './Graph.module.scss';
 
-type GraphProps = {
-  onClick?: () => void;
-} & WithDimensionsProps;
+type GraphProps = WithDimensionsProps & React.HTMLAttributes<HTMLDivElement>;
 
 const Graph: FunctionComponent<GraphProps> = ({
-  onClick,
   forwardRef,
   width,
   height,
+  ...rest
 }) => {
-  const handleOnClick = () => {
-    if (onClick) {
-      onClick();
-    }
-  };
-
-  console.log(forwardRef, width, height);
-
   const style = {
     width: `${Math.floor(width / 2) - 1}px`,
     height: `${Math.floor(height / 2) - 1}px`,
   };
 
   return (
-    <div ref={forwardRef} className={styles['graph']} onClick={handleOnClick}>
+    <div ref={forwardRef} className={styles['graph']} {...rest}>
       <div style={style}>Graph 1</div>
       <div style={style}>Graph 2</div>
       <div style={style}>Graph 3</div>
